@@ -36,7 +36,8 @@ int main() {
 
 
     // Output .txt file will be later utilized by writePlot.py to visualize results
-    ofstream newFile("output.txt");
+    // ofstream newFile("output.txt");
+    ofstream newFile("output.py");
 
     // Example 0
     vector<double> x0 = {2, 0, 1, 1, 2, 0, 2, 0, 1};
