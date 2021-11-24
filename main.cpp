@@ -14,7 +14,7 @@
   * @param newFile: Write test results into this output file
   * @return void
   */
-void test(vector<double> x, vector<double> y, int row, int col, ostream& newFile)
+void test(vector<double> x, vector<double> y, int row, int col, ostream& newFile, string outputListName)
 {
     
     CheckerBoard CB(row,col);
@@ -24,7 +24,7 @@ void test(vector<double> x, vector<double> y, int row, int col, ostream& newFile
     // cout << ans << endl;
     // cout << "size: " << ans[0].size() << endl;
 
-    newFile << ans << "\n";
+    newFile << outputListName << ans << "\n";
 
     CB.display();  //display immediate results onto console, but can also be viewed via output.txt or writePlot.py
 
@@ -35,18 +35,17 @@ void test(vector<double> x, vector<double> y, int row, int col, ostream& newFile
 int main() {
 
 
-    // Output .txt file will be later utilized by writePlot.py to visualize results
-    // ofstream newFile("output.txt");
-    ofstream newFile("output.py");
+    // Output .py file will be later utilized by writePlot.py to visualize results
+    ofstream newFile(".\\output\\output.py"); // ofstream newFile("output.txt");
 
     // Example 0
     vector<double> x0 = {2, 0, 1, 1, 2, 0, 2, 0, 1};
     vector<double> y0 = {0, 0, 0, 1, 1, 2, 2, 1, 2};
     
-    newFile << "output_0 = " << "\n";
+    // newFile << "output_0 = " << "\n";
 
     cout << "Example 0:\n";
-    test(x0,y0,3,3, newFile);
+    test(x0,y0,3,3, newFile, "output_0 = ");
 
 
     // Example 1
@@ -60,10 +59,10 @@ int main() {
              4.9679, 3.1858, 6.9762, 5.3544, 2.1739, 2.9788, 5.2431, 7.7692}
     };
 
-    newFile << "output_1 = " <<"\n";
+    // newFile << "output_1 = " <<"\n";
 
     cout << "Example 1:\n";
-    test(example_1[0],example_1[1],6,6,newFile);    
+    test(example_1[0],example_1[1],6,6,newFile, "output_1 = ");    
 
 
     // Example 2
@@ -82,10 +81,10 @@ int main() {
              -1.7, -1.4, -1.1, -0.8, -0.5, -0.20000000000000018}
     };
 
-    newFile << "output_2 = " << "\n";
+    // newFile << "output_2 = " << "\n";
 
     cout << "Example 2:\n";
-    test(example_2[0],example_2[1],7,5,newFile);    
+    test(example_2[0],example_2[1],7,5,newFile, "output_2 = ");    
 
 
     // Example 3
@@ -106,10 +105,10 @@ int main() {
            -4.413043509912072, -4.871541520944656, -5.33003953197724, -3.4387352877089783, -3.8972332987415625,
            -4.355731309774147, -4.8142293208067315, -5.272727331839316, -5.7312253428719, -6.189723353904485}};
 
-     newFile << "output_3 = " << "\n";
+     // newFile << "output_3 = " << "\n";
 
      cout << "Example 3:\n";
-     test(example_3[0],example_3[1],7,5,newFile); 
+     test(example_3[0],example_3[1],7,5,newFile, "output_3 = "); 
 
 
     newFile.close();

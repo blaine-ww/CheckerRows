@@ -18,22 +18,30 @@ import matplotlib.image as mpimg
 
 import output
 
-exec(open('output.py').read()) #read output lists from output.py
+exec(open('output\output.py').read()) #read output lists from output.py
 
 
 def writePlot(example, name=""):
     
     plt.title(name + " Visualization")
+    plt.xlabel("X coordinates")
+    plt.ylabel("Y coordinates")
     plt.plot(example[0][:],example[1][:],'-o')
+    
+
     
     # only save img file if name provided
     if name:
-        plt.savefig(name)
+        plt.savefig("output/"+ name + ".jpg")
     
     plt.show()
 
+    
+    
+
+
 # adjust ./output_name based on object names in main.cpp and output.py
-writePlot(output_0, "Example_0.jpg")
-writePlot(output_1, "Example_1.jpg")
-writePlot(output_2, "Example_2.jpg")
-writePlot(output_3, "Example_3.jpg")
+writePlot(output_0, "Example_0")
+writePlot(output_1, "Example_1")
+writePlot(output_2, "Example_2")
+writePlot(output_3, "Example_3")
