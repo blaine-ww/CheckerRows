@@ -27,7 +27,7 @@ Note:  The checkerboard may be rotated in any direction, and the image may be di
 ## Instructions:
 0. `cd CheckerRows/`
 1. `g++ -o main main.cpp`
-2. `./main.cpp`
+2. `./main`
 3. `python WritePlot.py`
 
 
