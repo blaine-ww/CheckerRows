@@ -21,6 +21,7 @@ import output
 exec(open('output\output.py').read()) #read output lists from output.py
 
 
+
 def writePlot(example, name=""):
     
     plt.title(name + " Visualization")
@@ -28,16 +29,12 @@ def writePlot(example, name=""):
     plt.ylabel("Y coordinates")
     plt.plot(example[0][:],example[1][:],'-o')
     
-
-    
     # only save img file if name provided
     if name:
         plt.savefig("output/"+ name + ".jpg")
     
     plt.show()
 
-    
-    
 
 
 # adjust ./output_name based on object names in main.cpp and output.py
